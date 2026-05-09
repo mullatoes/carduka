@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: carduka
+
+
+  datasource:
+    url: jdbc:h2:mem:cardukadb
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+server:
+  port: 8080
+  shutdown: graceful #When Kubernetes terminates a pod, we want the app to stop accepting new requests and finish current requests before shutting down.
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true

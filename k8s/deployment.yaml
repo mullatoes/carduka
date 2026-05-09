@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carduka-deployment
+  labels:
+    app: carduka
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: carduka
+  template:
+    metadata:
+      labels:
+        app: carduka
+    spec:
+      containers:
+        - name: carduka
+          image: carduka:1.0.2
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

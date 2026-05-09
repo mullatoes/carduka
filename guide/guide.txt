@@ -1,0 +1,6 @@
+POST    /api/v1/cars
+GET     /api/v1/cars
+GET     /api/v1/cars/{id}
+PUT     /api/v1/cars/{id}
+DELETE  /api/v1/cars/{id}
+GET     /actuator/health
