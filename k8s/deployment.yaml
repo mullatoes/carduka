@@ -21,6 +21,10 @@ spec:
           ports:
             - containerPort: 8080
 
+          envFrom:
+            - configMapRef:
+                name: carduka-config
+
           resources:
             requests:
               memory: "256Mi"
