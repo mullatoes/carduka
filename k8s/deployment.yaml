@@ -24,6 +24,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: carduka-config
+            - secretRef:
+                name: carduka-secret
 
           resources:
             requests:
